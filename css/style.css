@@ -1,0 +1,10 @@
+#button{
+	float: right;
+
+}
+
+.contentor{
+	background-color: rgba(191, 189, 170, 0.8);
+	border-radius: 5px;
+	border: 1px solid #837f63;
+}
