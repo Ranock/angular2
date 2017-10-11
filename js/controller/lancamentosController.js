@@ -3,12 +3,17 @@ angular.module("controleDeCustos").controller("lancamentosController", function(
 							{data:"12/08/2011", descricao:"debito", valor:-10},
 							{data:"12/08/2011", descricao:"credito", valor:10},
 							{data:"12/08/2011", descricao:"debito", valor:-10},
+							{data:"12/08/2011", descricao:"debito", valor:-10},
+							{data:"12/08/2011", descricao:"debito", valor:-10},
+							{data:"12/08/2011", descricao:"debito", valor:-10},
 							{data:"12/08/2011", descricao:"credito", valor:10}
 	];
 
 		$scope.lancamentosDebitos = [{}];
 		$scope.lancamentosCreditos = [{}];
 		$scope.selecionado = true;
+		$scope.valorDebito = 0;
+		$scope.valorCredito = 0;
 
 
 		$scope.lancamentosDebitos = $scope.lancamentos.filter(function(debito){
@@ -22,7 +27,12 @@ angular.module("controleDeCustos").controller("lancamentosController", function(
 			$scope.selecionado = !selecionado;
 		}
 
-		 $scope.calcularSaldo = function(lancamentos){
+		
+		$scope.valorDebito  =	calcular($scope.lancamentosDebitos);
+		$scope.valorCredito =	calcular($scope.lancamentosCreditos);
+		$scope.valorTotal=	calcular($scope.lancamentos);
+
+ 		function calcular(lancamentos){
 			var valorTotal = 0;
 			for(lancamento in lancamentos){
 				if(lancamentos.hasOwnProperty(lancamento)){

@@ -13,51 +13,59 @@
 <script src="js/controller/lancamentosController.js"></script>
 </head>
 
-<body ng-controller="lancamentosController" class="container">
+<body ng-controller="lancamentosController" class="container-fluid">
 	
-
-		<div class="col-md-2"></div>
-		<div class="col-md-10">
-			<div class="row">
-				<div class="col-md-12">
-					<input type="button" id="button" class="btn btn-default" value="modificar a visualizacao" ng-click="modificarVisualizacao(selecionado)"> 
-				</div>
-			</div>
-			<div class="row contentor" >
-				<div class="col-md-12" ng-show="selecionado">
-					<h2> Lancamentos </h2>
-					<table class="table">
-						<tr ng-repeat="lancamento in lancamentos">
-							<td class="col-sm-2">{{lancamento.data}}</td>
-							<td class="col-sm-8">{{lancamento.descricao}}</td>
-							<td class="col-sm-2">{{lancamento.valor}}</td>
-						</tr>
-					</table>
-				</div>
-
-				<div class="col-md-6"  ng-show="!selecionado">
-					<h2> Debitos </h2>
-					<table class="table ">
-						<tr ng-repeat="debito in lancamentosDebitos">
-							<td class="col-sm-2">{{debito.data}}</td>
-							<td class="col-sm-8">{{debito.descricao}}</td>
-							<td class="col-sm-2">{{debito.valor}}</td>
-						</tr>
-					</table>
-				</div>
-				<div class="col-md-6" ng-show="!selecionado">
-					<h2> Creditos </h2>
-					<table class="table ">
-						<tr ng-repeat="creditos in lancamentosCreditos">
-							<td class="col-sm-2">{{creditos.data}}</td>
-							<td class="col-sm-8">{{creditos.descricao}}</td>
-							<td class="col-sm-2">{{creditos.valor}}</td>
-						</tr>
-					</table>
-				</div>
-			</div>
+<div class="row">
+		<div class="col-md-2 row">
+		<div class="col-md-12 menu"></div>
+			
+			
 		</div>
+		<div class="col-md-10">
+			<div class="row contentor" >
+				<input type="button" id="button" class="btn btn-default form form-control" value="modificar a visualizacao" ng-click="modificarVisualizacao(selecionado)"> 
+				<div class="arealancam">
+						<div class="col-md-12" ng-show="selecionado">
+						<h2> Lancamentos </h2>
+						<table class="table">
+							<tr ng-repeat="lancamento in lancamentos">
+								<td class="col-sm-2">{{lancamento.data}}</td>
+								<td class="col-sm-8" align="center">{{lancamento.descricao}}</td>
+								<td class="col-sm-2" align="right">{{lancamento.valor}}</td>
+							</tr>
+						</table>
+					</div>
 
+					<div class="col-md-6"  ng-show="!selecionado">
+						<h2> Debitos </h2>
+						<table class="table ">
+							<tr ng-repeat="debito in lancamentosDebitos">
+								<td class="col-sm-2">{{debito.data}}</td>
+								<td class="col-sm-8" align="center">{{debito.descricao}}</td>
+								<td class="col-sm-2" align="right">{{debito.valor}}</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-md-6" ng-show="!selecionado">
+						<h2> Creditos </h2>
+						<table class="table ">
+							<tr ng-repeat="creditos in lancamentosCreditos">
+								<td class="col-sm-2">{{creditos.data}}</td>
+								<td class="col-sm-8" align="center">{{creditos.descricao}}</td>
+								<td class="col-sm-2" align="right">{{creditos.valor}}</td>
+							</tr>
+						</table>
+					</div>
+			
+				</div>
+				
+				<div class="col-md-12 saldo" >
+					<p>Saldo total: {{valorTotal}}</p>
+				</div>
+			</div>
+	
+		</div>
+	</div>
 
 </body>
 
