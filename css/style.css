@@ -1,0 +1,50 @@
+#button{
+	float: right;
+}
+body{
+	background-color: #e2e2e2;
+	background-image: linear-gradient(to left,  rgba(0, 0, 0, .6) 0.1%, rgba(0,0,0, .2) 50%, rgba(0, 0, 0, .2) 49% );
+	
+}
+
+.menu{
+	
+	height: 1200px;
+}
+.contentor{
+	background-color: white;
+	border: 1px solid black;
+}
+.arealancam{
+	height: 100px;
+	scroll-behavior: auto;
+}
+
+.saldo{
+	text-align: right;
+	background-color: #dbdbdb;
+	font-size: 15px;
+	font-weight: bold;
+	padding-bottom: -5px;
+}
+.saldo p {
+	padding-right: 5px;
+	padding-top: 10px;
+
+}
+
+.credito{
+	background-color: green;
+	
+	color:white;
+	text-align: right;
+
+
+}
+.debito{
+	background-color: red;
+
+	color:white;
+	text-align: right;
+
+}
